@@ -75,16 +75,7 @@ def traingle_number(n):
     return n*(n+1)/2
 
 def count_divisors(number):
-    count, i = 0, 1
-    root = math.sqrt(number)
-    while i < root:
-        if number % i == 0:
-            count += 2
-        i += 1
-    # perfect square
-    if number % root == 0:
-        count += 1
-    return count
+    return len(divisors(number))
 
 def collatz_seq(n):
     """
@@ -109,3 +100,25 @@ def factorial(n):
         r *= n
         n = n - 1
     return r
+
+def divisors(n):
+    """
+    For Problem 21
+    """
+    if n == 0:
+        return []
+
+    r, i, root = [], 1, math.sqrt(n)
+    while i < root:
+        if n % i == 0:
+            r.extend([i, n/i])
+        i += 1
+    # perfect square
+    if n % root == 0:
+        r.append(int(root))
+    r.sort()
+    return r
+
+def dd(n):
+    r = divisors(n)
+    return sum(r[:-1])
