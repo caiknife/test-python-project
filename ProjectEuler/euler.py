@@ -18,6 +18,10 @@ def factor(num):
 
 
 def cache(func):
+    """
+    cache decorator
+    用来装饰递归调用的函数
+    """
     caches = {}
     @wraps(func)
     def wrap(*args):
@@ -81,3 +85,27 @@ def count_divisors(number):
     if number % root == 0:
         count += 1
     return count
+
+def collatz_seq(n):
+    """
+    For Problem 14
+    """
+    r = []
+    while n>1:
+        r.append(n)
+        if n % 2 == 0:
+            n = n/2
+        else:
+            n = 3*n + 1
+    r.append(n)
+    return r
+
+def factorial(n):
+    """
+    For Problem 20
+    """
+    r = 1
+    while n > 1:
+        r *= n
+        n = n - 1
+    return r
