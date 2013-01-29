@@ -55,18 +55,22 @@ def is_prime(num):
     """
     For Problem 7
     """
-    if num <= 1:
-        return False
-    elif num == 2:
+    if num > 1 and count_divisors(num) == 2:
         return True
     else:
-        root = math.sqrt(num)
-        i = 3
-        while i <= root:
-            if num % i == 0:
-                return False
-            i += 2
-        return True
+        return False
+    # if num <= 1:
+    #     return False
+    # if num == 2:
+    #     return True
+    # else:
+    #     root = math.sqrt(num)
+    #     i = 3
+    #     while i <= root:
+    #         if num % i == 0:
+    #             return False
+    #         i += 2
+    #     return True
         
 def traingle_number(n):
     """
@@ -122,3 +126,29 @@ def divisors(n):
 def dd(n):
     r = divisors(n)
     return sum(r[:-1])
+
+def get_digits(n, integer=True):
+    """
+    get all digits from a number
+    """
+    if integer:
+        return [int(x) for x in str(n)]
+    else:
+        return [str(x) for x in str(n)]
+
+def is_pandigital(*args, **kwargs):
+    """
+    For Problem 32 & 38
+    """
+    num = sorted("".join(str(arg) for arg in args))
+    try:
+        if kwargs['length'] and len(num)!=kwargs['length']:
+            return False
+    except KeyError:
+        pass
+
+    for i in range(len(num)):
+        if str(i+1) != str(num[i]):
+            return False
+
+    return True
