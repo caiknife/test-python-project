@@ -23,11 +23,11 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 """
 
-from euler import traingle_number, count_divisors
+from euler import triangle_number, count_divisors
 
 n = 1
 while True:
-    number = traingle_number(n)
+    number = triangle_number(n)
     n += 1
     if count_divisors(number) >= 500:
         break 
