@@ -55,6 +55,8 @@ def is_prime(num):
     """
     For Problem 7
     """
+    if (num != 2 and num % 2 == 0) or (num != 3 and num % 3 == 0):
+        return False
     if num > 1 and count_divisors(num) == 2:
         return True
     else:
@@ -72,7 +74,7 @@ def is_prime(num):
     #         i += 2
     #     return True
         
-def traingle_number(n):
+def triangle_number(n):
     """
     For Problem 12
     """
@@ -99,11 +101,7 @@ def factorial(n):
     """
     For Problem 20
     """
-    r = 1
-    while n > 1:
-        r *= n
-        n = n - 1
-    return r
+    return math.factorial(n)
 
 def divisors(n):
     """
@@ -136,6 +134,11 @@ def get_digits(n, integer=True):
     else:
         return [str(x) for x in str(n)]
 
+def get_int(l):
+    if len(l) == 0:
+        return 0
+    return int("".join([str(s) for s in l]))
+
 def is_pandigital(*args, **kwargs):
     """
     For Problem 32 & 38
@@ -152,3 +155,62 @@ def is_pandigital(*args, **kwargs):
             return False
 
     return True
+
+def worth(word):
+    return sum([int(ord(w)-ord('A')+1) for w in word.upper()])
+
+def is_triangle_word(word):
+    """
+    For Problem 42
+    """
+    triangle_numbers = [triangle_number(i) for i in range(1, 100)]
+    if worth(word) in triangle_numbers:
+        return True
+    else:
+        return False
+
+def pentagon_number(n):
+    """
+    For Problem 44
+    """ 
+    return n*(3*n-1)/2
+
+def hexagon_number(n):
+    """
+    For Problem 45
+    """
+    return n*(2*n-1)
+
+def make_primes(limit=100):
+    r, i = [2], 3
+    while i <= limit:
+        if is_prime(i):
+            r.append(i)
+        i += 2
+    return r
+
+def prime_factors(n):
+    """
+    For Problem 47
+    """
+    if is_prime(n):
+        return None
+    g = prime_generator()
+    i = 0
+    r = []
+    while True:
+        i = g.next()
+        while n % i == 0:
+            n = n / i
+            r.append(i)
+        if n == 1:
+            break
+    return r
+
+def prime_generator():
+    yield 2
+    n = 3 
+    while True:
+        if is_prime(n):
+            yield n
+        n += 2
