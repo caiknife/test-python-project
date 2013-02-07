@@ -10,3 +10,4 @@
 *   Project Euler Problem 26 - 40 completed on 2013-01-29
 *   Project Euler Problem 41 - 50 completed on 2013-01-30
 *   Project Euler Problem 51 - 56 completed on 2013-02-03
+*   Project Euler Problem 57 - 60 completed on 2013-02-07
