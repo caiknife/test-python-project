@@ -13,9 +13,9 @@ What is the largest prime factor of the number 600851475143 ?
 number = 600851475143
 i = 2
 
-while i!=number:
-    if not number%i:
-        number = number/i
+while i != number:
+    if not number % i:
+        number = number / i
     else:
         i += 1
 

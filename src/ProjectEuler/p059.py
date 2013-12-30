@@ -18,12 +18,15 @@ Your task has been made easy, as the encryption key consists of three lower case
 from itertools import permutations
 from string import ascii_lowercase
 
+
 def decrypt(code, password):
     l = len(password)
     return tuple(c ^ ord(password[i%l]) for i, c in enumerate(code))
 
+
 def to_text(code):
     return "".join(chr(c) for c in code)
+
 
 def main():
     code = tuple(int(x) for x in file("cipher1.txt").read().strip().split(","))

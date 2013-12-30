@@ -46,6 +46,7 @@ words = [
 ]
 words.reverse()
 
+
 def spell(n, words=words):
     word = []
     while n > 0:

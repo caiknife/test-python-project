@@ -24,6 +24,7 @@ How many Lychrel numbers are there below ten-thousand?
 NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretical nature of Lychrel numbers.
 """
 
+
 def is_lychrel_number(n):
     n = str(n)
     for i in xrange(50):
@@ -31,6 +32,7 @@ def is_lychrel_number(n):
         if n == n[::-1]:
             return False
     return True
+
 
 def main():
     print sum([1 for n in xrange(10000) if is_lychrel_number(n)])

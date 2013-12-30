@@ -25,6 +25,7 @@ Find the product of the coefficients, a and b, for the quadratic expression that
 from euler import is_prime
 from itertools import product
 
+
 def num_primes(func):
     n = 0
     while True:

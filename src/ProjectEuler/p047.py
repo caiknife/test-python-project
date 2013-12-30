@@ -39,6 +39,7 @@ from euler import prime_factors, prime_generator, is_prime
 
 import math
 
+
 def factorize(n):
     if n < 1:
         raise ValueError('fact() argument should be >= 1')

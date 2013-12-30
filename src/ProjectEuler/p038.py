@@ -19,6 +19,7 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 
 from euler import is_pandigital
 
+
 def concatenate_product(n, i):
     return int("".join([str(n*x) for x in range(1, i+1)]))
 

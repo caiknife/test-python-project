@@ -11,7 +11,7 @@ If p is the perimeter of a right angle triangle with integral length sides, {a,b
 
 For which value of p  1000, is the number of solutions maximised?
 """
-from collections import defaultdict
+
 
 def solutions(p):
     s = []

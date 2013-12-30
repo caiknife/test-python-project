@@ -40,14 +40,18 @@ Find the smallest prime which, by replacing part of the number (not necessarily 
 
 #!/usr/bin/env python
 from itertools import *
+
+
 def primes(n): 
-    if n==2: return [2]
-    elif n<2: return []
-    s=range(3,n+1,2)
+    if n == 2:
+        return [2]
+    elif n < 2:
+        return []
+    s = range(3, n+1, 2)
     mroot = n ** 0.5
-    half=(n+1)/2-1
-    i=0
-    m=3
+    half = (n+1)/2-1
+    i = 0
+    m = 3
     while m <= mroot:
         if s[i]:
             j=(m*m-3)/2
@@ -55,13 +59,15 @@ def primes(n):
             while j<half:
                 s[j]=0
                 j+=m
-        i=i+1
-        m=2*i+3
+        i += 1
+        m = 2*i + 3
     return [2]+[x for x in s if x]
 
 from bisect import bisect_left
 # sqrt(1000000000) = 31622
 __primes = primes(31622)
+
+
 def is_prime(n):
     # if prime is already in the list, just pick it
     if n <= 31622:
@@ -78,6 +84,7 @@ def is_prime(n):
             return False
     return True
 
+
 def number_families(num):
     digits = [d for d in str(num)]
     products = list(product((True, False), repeat=len(digits)))[1:-1]
@@ -89,6 +96,7 @@ def number_families(num):
             else:
                 pattern += 'X'
         yield [int(pattern.replace('X', str(n))) for n in range(10)]
+
 
 def main():
     for prime in primes(1000000):

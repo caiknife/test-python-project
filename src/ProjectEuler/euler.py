@@ -30,6 +30,7 @@ def cache(func):
         return caches[args]
     return wrap
 
+
 @cache
 def fib(num):
     """
@@ -41,6 +42,7 @@ def fib(num):
         return 2
     return fib(num-1) + fib(num-2)
 
+
 @cache
 def gcd(a, b):
     """
@@ -50,6 +52,7 @@ def gcd(a, b):
         return b
     else:
         return gcd(b%a, a)
+
 
 def is_prime(num):
     """
@@ -73,15 +76,18 @@ def is_prime(num):
     #             return False
     #         i += 2
     #     return True
-        
+
+
 def triangle_number(n):
     """
     For Problem 12
     """
     return n*(n+1)/2
 
+
 def count_divisors(number):
     return len(divisors(number))
+
 
 def collatz_seq(n):
     """
@@ -97,11 +103,13 @@ def collatz_seq(n):
     r.append(n)
     return r
 
+
 def factorial(n):
     """
     For Problem 20
     """
     return math.factorial(n)
+
 
 def divisors(n):
     """
@@ -121,9 +129,11 @@ def divisors(n):
     r.sort()
     return r
 
+
 def dd(n):
     r = divisors(n)
     return sum(r[:-1])
+
 
 def get_digits(n, integer=True):
     """
@@ -134,10 +144,12 @@ def get_digits(n, integer=True):
     else:
         return [str(x) for x in str(n)]
 
+
 def get_int(l):
     if len(l) == 0:
         return 0
     return int("".join([str(s) for s in l]))
+
 
 def is_pandigital(*args, **kwargs):
     """
@@ -156,8 +168,10 @@ def is_pandigital(*args, **kwargs):
 
     return True
 
+
 def worth(word):
     return sum([int(ord(w)-ord('A')+1) for w in word.upper()])
+
 
 def is_triangle_word(word):
     """
@@ -169,17 +183,20 @@ def is_triangle_word(word):
     else:
         return False
 
+
 def pentagon_number(n):
     """
     For Problem 44
     """ 
     return n*(3*n-1)/2
 
+
 def hexagon_number(n):
     """
     For Problem 45
     """
     return n*(2*n-1)
+
 
 def make_primes(limit=100):
     r, i = [2], 3
@@ -188,6 +205,7 @@ def make_primes(limit=100):
             r.append(i)
         i += 2
     return r
+
 
 def prime_factors(n):
     """
@@ -206,6 +224,7 @@ def prime_factors(n):
         if n == 1:
             break
     return r
+
 
 def prime_generator():
     yield 2

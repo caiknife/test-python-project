@@ -11,8 +11,11 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 
 What is the total of all the name scores in the file?
 """
+
+
 def name_worth(name):
     return sum([ord(x)-ord('A')+1 for x in name])
+
 
 def name_score(worth, order):
     return worth * order

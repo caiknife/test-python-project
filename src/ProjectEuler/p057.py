@@ -21,6 +21,7 @@ The next three expansions are 99/70, 239/169, and 577/408, but the eighth expans
 In the first one-thousand expansions, how many fractions contain a numerator with more digits than denominator?
 """
 
+
 def main():
     num, den, count = 3, 2, 0
     for i in xrange(1000):

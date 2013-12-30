@@ -59,14 +59,18 @@ The file, poker.txt, contains one-thousand random hands dealt to two players. Ea
 How many hands does Player 1 win?
 """
 
-value = { '2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'T':10,'J':11,'Q':12,'K':13,'A':14 }
+value = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14}
 all_kinds = tuple(reversed(sorted(value.values())))
 all_suits = list('DCSH')
 
+
 def get(hash, arr): 
     return ((i, hash.get(i, {})) for i in arr)
-def has(hash, arr): 
+
+
+def has(hash, arr):
     return not sum(1 for i in arr if i not in hash)
+
 
 class ShowHand(object):
     def __init__(self, *args):
@@ -75,9 +79,9 @@ class ShowHand(object):
         self._cards = args
         self._make_hand()
         self.rank = self._rank()
+        self._hand = {}
 
     def _make_hand(self):
-        self._hand = {}
         for card in self._cards:
             self._hand.setdefault(value[card[0]], {})[card[1]] = 1
             self._hand.setdefault(card[1], {})[value[card[0]]] = 1
@@ -86,7 +90,7 @@ class ShowHand(object):
         # royal flush
         for suit, kinds in get(self._hand, all_suits):
             if has(kinds, tuple('TJQKA')):
-                return (9,)
+                return (9, )
 
         # straight flush
         for suit, kinds in get(self._hand, all_suits):

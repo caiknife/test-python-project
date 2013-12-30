@@ -21,6 +21,7 @@ If one complete new layer is wrapped around the spiral above, a square spiral wi
 """
 from euler import is_prime
 
+
 def sprial_numbers():
     n, step, since_last = 1, 2, 0
     while True:
@@ -30,6 +31,7 @@ def sprial_numbers():
         if since_last == 4:
             step += 2
             since_last = 0
+
 
 def main():
     level, primes = 0, 0

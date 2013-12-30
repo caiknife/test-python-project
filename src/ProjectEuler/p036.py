@@ -13,8 +13,10 @@ Find the sum of all numbers, less than one million, which are palindromic in bas
 
 """
 
+
 def to_binary(n):
     return int(str(bin(n))[2:])
+
 
 def is_palindrome(n):
     r = int(str(n)[::-1])

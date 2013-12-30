@@ -16,6 +16,7 @@ from euler import factorial, get_digits
 
 fact = (1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880)
 
+
 def is_curious(n):
     return sum([factorial(x) for x in get_digits(n)]) == n
 

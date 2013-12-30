@@ -55,11 +55,13 @@ MATRIX = """
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 """
 
+
 def product(obj):
     n = 1
     for i in obj:
         n *= i
     return n
+
 
 def seqs(matrix=MATRIX, x=0, y=0):
     if y+4 <= len(matrix):
@@ -70,6 +72,7 @@ def seqs(matrix=MATRIX, x=0, y=0):
         yield list(matrix[y+i][x+i] for i in range(4))
     if y+4 <= len(matrix) and x>=3:
         yield list(matrix[y+i][x-i] for i in range(4))
+
 
 def list_seqs(matrix=MATRIX):
     for y in range(len(matrix)):

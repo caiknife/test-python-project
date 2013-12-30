@@ -54,13 +54,14 @@ TRIANGLE_MATRIX = """
 """
 TRIANGLE_MATRIX = [[int(x) for x in line.split(" ")] for line in TRIANGLE_MATRIX.strip().split("\n")]
 
+
 def path(num, triangle=TRIANGLE_MATRIX):
     s = triangle[0][0]
     col = 0
     for row in xrange(1, len(triangle)):
         if num % 2: 
-            col = col + 1
-        num = num / 2
+            col += 1
+        num /= 2
         s += triangle[row][col]
     return s
 

@@ -12,14 +12,17 @@ Find the lowest sum for a set of five primes for which any two primes concatenat
 from euler import is_prime, make_primes
 from itertools import combinations
 
+
 def remarkable_prime(a, b):
     return is_prime(int(str(a)+str(b))) and is_prime(int(str(b)+str(a)))
+
 
 def a_set_of_five_primes(sets):
     for p in combinations(sets, 2):
         if not remarkable_prime(p[0], p[1]):
             return False
     return True
+
 
 def main():
     primes = make_primes(10000)

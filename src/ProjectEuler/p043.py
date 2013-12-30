@@ -22,6 +22,7 @@ Find the sum of all 0 to 9 pandigital numbers with this property.
 from itertools import permutations
 from euler import get_int
 
+
 def has_property(p):
     primes = [2,3,5,7,11,13,17]
     for i in range(1, len(p)-2):

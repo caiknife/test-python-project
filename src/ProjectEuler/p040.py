@@ -16,12 +16,14 @@ If dn represents the nth digit of the fractional part, find the value of the fol
 d1  d10  d100  d1000  d10000  d100000  d1000000
 """
 
+
 def make_irrational_fraction(length):
     n, s = 1, ""
     while len(s) < length:
         s = "".join((s, str(n)))
         n += 1
     return s
+
 
 def return_int(n, length):
     if length==0:

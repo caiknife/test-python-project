@@ -14,6 +14,7 @@ How many circular primes are there below one million?
 
 from euler import get_digits, is_prime
 
+
 def is_circular(n):
     digits = [str(x) for x in get_digits(n)]
     for d in range(len(digits)):

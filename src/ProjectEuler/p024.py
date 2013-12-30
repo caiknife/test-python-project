@@ -14,6 +14,7 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
 
 from euler import factorial
 
+
 def permutation(orig_nums, n):
     nums = list(orig_nums)
     perm = []

@@ -15,6 +15,7 @@ What 12-digit number do you form by concatenating the three terms in this sequen
 from itertools import permutations
 from euler import make_primes, is_prime, get_digits
 
+
 def to_tuple(n):
     return tuple(str(n))
 

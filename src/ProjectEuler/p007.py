@@ -12,11 +12,13 @@ What is the 10 001st prime number?
 
 from euler import is_prime
 
+
 def number_generator():
     i = 3
     while True:
         yield i
         i += 2
+
 
 def list_prime(num=None):
     i = 1

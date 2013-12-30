@@ -29,6 +29,7 @@ What is the first term in the Fibonacci sequence to contain 1000 digits?
 
 from euler import fib
 
+
 def fib_generator():
     i = 1
     while True:

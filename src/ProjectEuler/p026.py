@@ -23,6 +23,7 @@ Find the value of d  1000 for which 1/d contains the longest recurring cycle in 
 
 from operator import itemgetter
 
+
 def cycle_length(n):
     for t in range(1, n):
         if 10**t % n == 1:

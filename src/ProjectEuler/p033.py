@@ -17,6 +17,7 @@ If the product of these four fractions is given in its lowest common terms, find
 from fractions import Fraction
 from itertools import product
 
+
 def is_curious(n, d):
     f = Fraction(n, d)
     if f >= 1:

@@ -23,6 +23,7 @@ from itertools import product
 
 PRIMES = make_primes(10000)
 
+
 def is_conjecture(n):
     if is_prime(n):
         return False
