@@ -14,10 +14,10 @@ db.blog.ensureIndex({"comments.date": 1});
 db.foo.ensureIndex({"a": 1, "b": 1, "c": 1}, {"name": "alphabet"}); // 第二个参数就是索引的名字
 
 // 唯一索引
-db.people.ensureIndex({"username", 1}, {"unique": true});
+db.people.ensureIndex({"username": 1}, {"unique": true});
 
 // 唯一索引消除重复
-db.people.ensureIndex({"username", 1}, {"unique": true, "dropDups": true});
+db.people.ensureIndex({"username": 1}, {"unique": true, "dropDups": true});
 
 // 修改索引
 db.people.ensureIndex({"username": 1}, {"background": true}); // background参数表示在后台创建索引，不会引起阻塞
