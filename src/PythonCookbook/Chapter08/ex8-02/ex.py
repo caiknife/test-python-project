@@ -1,10 +1,10 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-22
 在Linux上测量内存使用
 @author: CaiKnife
-'''
+"""
 
 import os
 
@@ -15,6 +15,7 @@ _scale = {
     'KB': 1024.0,
     'MB': 1024.0 * 1024.0
 }
+
 
 def _VmB(VmKey):
     try:
@@ -29,11 +30,14 @@ def _VmB(VmKey):
         return 0.0
     return float(v[1]) * _scale[v[2]]
 
+
 def memory(since=0.0):
     return _VmB('VmSize:') - since
 
+
 def resident(since=0.0):
     return _VmB('VmRSS:') - since
+
 
 def stacksize(since=0.0):
     return _VmB('VmStk:') - since

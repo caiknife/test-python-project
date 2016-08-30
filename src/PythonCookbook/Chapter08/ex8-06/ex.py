@@ -1,12 +1,14 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-22
 从traceback中获得更多信息
 @author: CaiKnife
-'''
+"""
 
-import sys, traceback
+import sys
+import traceback
+
 
 def print_exc_plus():
     tb = sys.exc_info()[2]
@@ -22,7 +24,7 @@ def print_exc_plus():
     print 'Locals by frame, innermost last'
     for frame in stack:
         print
-        print "Frame %s in %s at line %s" % (frame.f_code.co_name, 
+        print "Frame %s in %s at line %s" % (frame.f_code.co_name,
                                              frame.f_code.co_filename,
                                              frame.f_lineno)
         for key, value in frame.f_locals.items():

@@ -1,15 +1,19 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-22
 简单的使用单元测试
 @author: CaiKnife
-'''
+"""
 
-import types, sys, traceback
+import types
+import sys
+import traceback
+
 
 class TestException(Exception):
     pass
+
 
 def test(modulename, verbose=None, log=sys.stdout):
     module = __import__(modulename)
@@ -28,14 +32,14 @@ def test(modulename, verbose=None, log=sys.stdout):
                     total_failed += 1
                     print >> sys.stderr, '%s.%s FAILED' % (modulename, name)
                     traceback.print_exc()
-    
+
     message = 'Module %s failed %s out of %s unittests.' % (modulename, total_failed, total_tested)
-    
+
     if total_failed:
         raise TestException(message)
     if verbose:
         print >> log, message
 
+
 def __test__():
     print 'in __test__'
-    
