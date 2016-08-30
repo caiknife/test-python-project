@@ -1,11 +1,11 @@
 #!/user/bin/python
-#coding: UTF-8
+# coding: UTF-8
 
-'''
+"""
 Created on 2011-11-22
 
 @author: ycai
-'''
+"""
 import pprint, UserDict, os, sys
 
 given = ['John', 'Eric', 'Terry', 'Michael']

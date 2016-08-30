@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 Created on 2013-1-15
 @author: CaiKnife
@@ -13,8 +13,10 @@ INDEX_FILE = "index.txt"
 PAGE_DIR = "pages"
 PATTERN = re.compile(r"thunder://[\w/]+=*")
 
+
 class VsvodException(Exception):
     pass
+
 
 def main():
     # create page dir if not exists
@@ -42,7 +44,7 @@ def main():
         else:
             print "%s 已经索引过！" % (url)
 
-    
+
     # write back index file
     index = file(INDEX_FILE, "w")
     try:
@@ -51,12 +53,12 @@ def main():
         index.close()
 
 
-
 def create_page_dir(dir=PAGE_DIR):
     pwd = os.getcwdu()
     page_dir = os.path.join(pwd, dir)
     if not os.path.exists(page_dir):
         os.mkdir(page_dir, 0777)
+
 
 def fetch_main(url=TARGET_SITE):
     contents = []
@@ -66,11 +68,12 @@ def fetch_main(url=TARGET_SITE):
         contents.append([ele.text(), "".join((url, ele.attr('href')))])
     return contents[::-1]
 
+
 def fetch_page(root_dir, name, url):
     name = name.replace(r"/", "-")
     page_dir = os.path.join(root_dir, name)
     create_page_dir(page_dir)
-    
+
     page_file = os.path.join(page_dir, "download.txt")
     image_file = os.path.join(page_dir, "images.txt")
 
@@ -94,7 +97,7 @@ def fetch_page(root_dir, name, url):
             df.close()
     else:
         print "No match!"
-    
+
     # get images
     images_list = []
     d = PQ(url=url)
@@ -111,6 +114,7 @@ def fetch_page(root_dir, name, url):
         print "Can not save download file!"
     finally:
         df.close()
+
 
 if __name__ == '__main__':
     main()

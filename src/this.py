@@ -1,10 +1,10 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-22
 
 @author: CaiKnife
-'''
+"""
 
 s = """Gur Mra bs Clguba, ol Gvz Crgref
 
@@ -31,6 +31,6 @@ Anzrfcnprf ner bar ubaxvat terng vqrn -- yrg'f qb zber bs gubfr!"""
 d = {}
 for c in (65, 97):
     for i in range(26):
-        d[chr(i+c)] = chr((i+13) % 26 + c)
+        d[chr(i + c)] = chr((i + 13) % 26 + c)
 
 print "".join([d.get(c, c) for c in s])

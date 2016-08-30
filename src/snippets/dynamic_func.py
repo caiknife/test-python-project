@@ -1,16 +1,19 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
 根据函数名称动态调用
 """
 
+
 def do_foo():
     print "foo!"
 
+
 def do_bar():
     print "bar!"
+
 
 class Print():
     def do_foo(self):
@@ -27,6 +30,7 @@ class Print():
     def static_bar():
         print "static bar!"
 
+
 def main():
     obj = Print()
 
@@ -41,6 +45,7 @@ def main():
     eval(func_name)()
     getattr(obj, func_name)()
     getattr(Print, static_name)()
+
 
 if __name__ == '__main__':
     main()

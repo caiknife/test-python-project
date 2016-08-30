@@ -1,13 +1,15 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 """
 
 import os, sys, urllib2, re
 
+
 class PageException(Exception):
     pass
+
 
 def main():
     if len(sys.argv) == 1:
@@ -19,6 +21,7 @@ def main():
     source = load_page(url=url)
     get_image_urls(source=source)
 
+
 def load_page(url=None):
     if not url:
         raise PageException("Error: No url offered!")
@@ -26,7 +29,7 @@ def load_page(url=None):
     source = ""
     try:
         f = urllib2.urlopen(url)
-        #print f.info()
+        # print f.info()
         source = f.read()
     except (urllib2.HTTPError, ValueError), e:
         raise PageException(e)
@@ -37,6 +40,7 @@ def load_page(url=None):
             pass
 
     return source
+
 
 def get_image_urls(source=None):
     if not source:

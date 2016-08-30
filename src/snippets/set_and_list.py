@@ -1,11 +1,12 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
 compare set and list iteration speed
 """
 import time
+
 MAX = 10000000
 
 l = list(i for i in range(MAX))

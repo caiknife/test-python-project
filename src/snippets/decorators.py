@@ -2,22 +2,28 @@
 # coding: UTF-8
 
 import time
-now = time.time
 from functools import wraps
+
+now = time.time
+
 
 def cache(func):
     caches = {}
+
     @wraps(func)
     def wrap(*args):
         if args not in caches:
             caches[args] = func(*args)
         return caches[args]
+
     return wrap
+
 
 def fib(num):
     if num < 2:
         return 1
-    return fib(num-1) + fib(num-2)
+    return fib(num - 1) + fib(num - 2)
+
 
 fib_with_cache = cache(fib)
 

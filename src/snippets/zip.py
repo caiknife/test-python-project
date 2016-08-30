@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 Created on 2013-1-14
 
@@ -8,8 +8,10 @@ Created on 2013-1-14
 
 import zipfile, sys, os
 
+
 class ZipException(Exception):
     pass
+
 
 def main():
     base_name = os.path.basename(__file__)
@@ -29,6 +31,7 @@ def main():
         dest_dir = None
 
     make_zip(abs_path, dest_dir=dest_dir)
+
 
 def make_zip(path, dest_dir=None):
     if not os.path.isdir(path):
@@ -53,7 +56,8 @@ def make_zip(path, dest_dir=None):
         zf.write(tar, arcname)
 
     zf.close()
-    
+
+
 if __name__ == "__main__":
     try:
         main()

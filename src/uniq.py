@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding:utf8
+# coding:utf8
 
 __author__ = 'zcai'
 
@@ -24,4 +24,4 @@ url_list = [
 
 print url_list
 
-print set(url_list) # error
+print set(url_list)  # error

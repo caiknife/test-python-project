@@ -1,5 +1,6 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
+
 """
 @author: CaiKnife
 """
@@ -8,14 +9,16 @@ from operator import methodcaller
 from collections import defaultdict
 import time, os
 
+
 def main():
     s = "Hello, world! Hello, MOTO! Hello, world! Hello, MOTO! Hello, world! Hello, MOTO! "
     print groupby(s, key=methodcaller("isalnum"))
-    
+
     for k, g in groupby(s, key=methodcaller("isalnum")):
         if k:
             word = ''.join(g)
             print k, g, word
+
 
 if __name__ == '__main__':
     start_time = time.time()
@@ -26,7 +29,7 @@ if __name__ == '__main__':
         f.close()
     end_time = time.time()
     print end_time - start_time
-    
+
     f = open('bible/bbe.txt')
     for line in f:
         pass

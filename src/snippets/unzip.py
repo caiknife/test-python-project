@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 Created on 2013-1-14
 
@@ -8,8 +8,10 @@ Created on 2013-1-14
 
 import zipfile, sys, os
 
+
 class ZipException(Exception):
     pass
+
 
 def main():
     base_name = os.path.basename(__file__)
@@ -30,6 +32,7 @@ def main():
 
     extract_zip(abs_path, dest_dir=dest_dir)
 
+
 def extract_zip(zip_name, dest_dir=None):
     if not os.path.isfile(zip_name):
         raise ZipException("Error: %s is not a file!" % (zip_name))
@@ -46,7 +49,7 @@ def extract_zip(zip_name, dest_dir=None):
         zf.extractall(dest_dir)
     except zipfile.BadZipfile:
         raise ZipException("Error: can not open %s!" % (zip_name))
-  
+
     zf.close()
 
 

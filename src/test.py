@@ -1,8 +1,9 @@
 #!/user/bin/python
-#coding: UTF-8
+# coding: UTF-8
 from itertools import groupby
 from operator import methodcaller
 from collections import defaultdict
+
 
 def index(fname='bible/bbe.txt'):
     data = defaultdict(list)
@@ -36,4 +37,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
