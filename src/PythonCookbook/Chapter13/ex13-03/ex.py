@@ -1,12 +1,14 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-23
 过滤FTP站点列表
 @author: CaiKnife
-'''
+"""
 
-import socket, ftplib
+import socket
+import ftplib
+
 
 def isFTPSiteUp(site):
     try:
@@ -15,7 +17,7 @@ def isFTPSiteUp(site):
         return False
     else:
         return True
-    
+
+
 def filterFTPsites(sites):
     return [site for site in sites if isFTPSiteUp(site)]
-

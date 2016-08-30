@@ -1,10 +1,10 @@
 #!/usr/bin/python
 #coding: UTF-8
-'''
+"""
 Created on 2012-11-23
 通过SOCKET数据报传输信息
 @author: CaiKnife
-'''
+"""
 
 import socket
 port = 8081
