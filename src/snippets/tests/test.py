@@ -1,10 +1,11 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 """
 
 import unittest
+
 
 def __getattr__(self, name):
     if name in ("assertIs", "assertIsNone"):
@@ -24,13 +25,17 @@ def __getattr__(self, name):
 
     def wrapper(a=None, b=None):
         return self.assertTrue(eval(statement))
+
     return wrapper
 
+
 unittest.TestCase.__getattr__ = __getattr__
+
 
 class TestCase(unittest.TestCase):
     def test_func(self):
         self.assertIs(None, None)
+
 
 if __name__ == '__main__':
     unittest.main()

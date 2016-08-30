@@ -1,10 +1,11 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 """
 import unittest, threading
 from snippets.singleton import Singleton, MyClass, MySingleton
+
 
 class TestSingleton(unittest.TestCase):
     def setUp(self):
@@ -27,6 +28,6 @@ class TestSingleton(unittest.TestCase):
         for x in self.my_singleton_instances:
             self.assertIs(x, MySingleton.getInstance())
 
-            
+
 if __name__ == "__main__":
     unittest.main()
