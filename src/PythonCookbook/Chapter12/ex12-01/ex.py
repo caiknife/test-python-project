@@ -1,21 +1,23 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-22
 检查XML的格式完好性
 @author: CaiKnife
-'''
+"""
 
 from xml.sax.handler import ContentHandler
 from xml.sax import make_parser
 from glob import glob
 import sys
 
+
 def parsefile(filename):
     parser = make_parser()
     parser.setContentHandler(ContentHandler())
     parser.parse(filename)
-    
+
+
 if __name__ == '__main__':
     for arg in sys.argv[1:]:
         for filename in glob(arg):
@@ -24,4 +26,3 @@ if __name__ == '__main__':
                 print '%s is well-formed' % filename
             except Exception, e:
                 print '%s it NOT well-formed! %s' % (filename, e)
-        
