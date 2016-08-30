@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # coding: UTF-8
-'''
+"""
 Created on 2013-4-28
 使用类作为容器
 @author: CaiKnife
-'''
+"""
 
 
 class Container(object):
