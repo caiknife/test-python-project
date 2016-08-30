@@ -1,23 +1,27 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-3
 
 @author: caiknife
-'''
+"""
+
 
 class IOManipulator(object):
     def __init__(self, function=None):
         self.function = function
-    
+
     def do(self, output):
         self.function(output)
-        
+
+
 def do_endl(stream):
     stream.output.write('\n')
-    stream.output.flush() 
-    
+    stream.output.flush()
+
+
 endl = IOManipulator(do_endl)
+
 
 class OStream(object):
     def __init__(self, output=None):
@@ -26,7 +30,7 @@ class OStream(object):
             output = sys.stdout
         self.output = output
         self.format = '%s'
-    
+
     def __lshift__(self, thing):
         if isinstance(thing, IOManipulator):
             thing.do(self)
@@ -35,9 +39,11 @@ class OStream(object):
             self.format = '%s'
         return self
 
+
 def example_main():
     cout = OStream()
-    cout << "The average of " << 1 << " and " << 3 << " is " << (1+3)/2 << endl
-    
+    cout << "The average of " << 1 << " and " << 3 << " is " << (1 + 3) / 2 << endl
+
+
 if __name__ == '__main__':
     example_main()

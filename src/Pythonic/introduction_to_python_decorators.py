@@ -1,22 +1,25 @@
 #!/usr/bin/python
 # coding: UTF-8
-'''
+"""
 Created on 2013-4-28 上午09:37:01
 
 @author: CaiKnife
-'''
-import time, random
+"""
+import time
+import random
 
 
 def timing(func):
     def wrapper(*args):
         t1 = time.clock()
-        if (len(*args)) < 42: print args
+        if (len(*args)) < 42:
+            print args
         func(*args)
-        if (len(*args)) < 42: print args
+        if (len(*args)) < 42:
+            print args
         t2 = time.clock()
         print 'The function %s took %0.3f ms and went through %s recursions.' % (
-        func.func_name, (t2 - t1) * 1000.0, count)
+            func.func_name, (t2 - t1) * 1000.0, count)
 
     return wrapper
 

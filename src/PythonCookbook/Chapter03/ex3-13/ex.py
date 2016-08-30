@@ -1,18 +1,20 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-17
 
 @author: CaiKnife
-'''
+"""
 
 import decimal
 
+
 def make_table(n=1):
     try:
-        return '\t'*n
+        return '\t' * n
     except TypeError, e:
         return ' '
+
 
 def italformat(value, places=2, curr='EUR', sep='.', dp=',', pos='', neg='-', overall=10):
     """ 将十进制value转化为财务格式的字符串
@@ -29,7 +31,7 @@ def italformat(value, places=2, curr='EUR', sep='.', dp=',', pos='', neg='-', ov
     result = []
     digits = map(str, digits)
     append, next = result.append, digits.pop
-    
+
     for i in range(places):
         if digits:
             append(next())
@@ -37,26 +39,27 @@ def italformat(value, places=2, curr='EUR', sep='.', dp=',', pos='', neg='-', ov
             append('0')
     append(dp)
     i = 0
-    
+
     while digits:
         append(next())
         i += 1
-        if i==3 and digits:
+        if i == 3 and digits:
             i = 0
             append(sep)
-    
+
     while len(result) < overall:
         append(' ')
-    
+
     append(curr)
-    
+
     if sign:
         append(neg)
     else:
         append(pos)
-        
+
     result.reverse()
     return ''.join(result)
+
 
 def getsubtotal(subtin=None):
     if subtin == None:
@@ -65,36 +68,42 @@ def getsubtotal(subtin=None):
     print '\n subtotal: ', make_table(3), italformat(subtotal)
     return subtotal
 
+
 def cnpcalc(subtotal):
     contrib = subtotal * decimal.Decimal('0.02')
     print '+ contributo integrativo 2%: ', make_table(), italformat(contrib, curr='')
     return contrib
 
+
 def vatcalc(subtotal, cnp):
-    vat = (subtotal+cnp) * decimal.Decimal('0.20')
+    vat = (subtotal + cnp) * decimal.Decimal('0.20')
     print '+ IVA 20%: ', make_table(3), italformat(vat, curr='')
     return vat
+
 
 def ritacalc(subtotal):
     rit = subtotal * decimal.Decimal('0.20')
     print "- Ritenuta d'acconto 20%: ", make_table(), italformat(rit, curr='')
     return rit
 
+
 def dototal(subtotal, cnp, iva=0, rit=0):
-    total = (subtotal+cnp+iva) - rit
+    total = (subtotal + cnp + iva) - rit
     print 'TOTALE: ', make_table(3), italformat(total)
     return total
+
 
 def invoicer(subtotal=None, context=None):
     if context is None:
         decimal.getcontext().rounding = 'ROUND_HALF_UP'
     else:
         decimal.setcontext(context)
-        
+
     subtot = getsubtotal(subtotal)
     contrib = cnpcalc(subtot)
     dototal(subtot, contrib, vatcalc(subtot, contrib), ritacalc(subtot))
-    
+
+
 if __name__ == '__main__':
     print "Welcome to the invoice calculator"
     tests = [100, 1000.00, "10000", 555.55]

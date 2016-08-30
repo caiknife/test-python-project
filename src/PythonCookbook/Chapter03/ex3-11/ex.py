@@ -1,21 +1,27 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-4
 
 @author: caiknife
-'''
-import os, time, sys, sched
+"""
+import os
+import time
+import sys
+import sched
 
 schedule = sched.scheduler(time.time, time.sleep)
+
 
 def perform_command(cmd, inc):
     schedule.enter(inc, 0, perform_command, (cmd, inc))
     os.system(cmd)
-    
+
+
 def main(cmd, inc=60):
     schedule.enter(0, 0, perform_command, (cmd, inc))
     schedule.run()
+
 
 if __name__ == '__main__':
     numargs = len(sys.argv) - 1

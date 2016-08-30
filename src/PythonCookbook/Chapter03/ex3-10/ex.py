@@ -1,18 +1,22 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-4
 
 @author: caiknife
-'''
-import time, os, sys
+"""
+import time
+import os
+import sys
+
 
 def main(cmd, inc=60):
     while True:
         os.system(cmd)
         print inc
         time.sleep(inc)
-        
+
+
 if __name__ == '__main__':
     numargs = len(sys.argv) - 1
     if numargs < 1 or numargs > 2:

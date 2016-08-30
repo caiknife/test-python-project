@@ -1,12 +1,16 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-3
 load data from zip file
 @author: caiknife
-'''
+"""
 
-import zipfile, tempfile, os, sys
+import zipfile
+import tempfile
+import os
+import sys
+
 handle, filename = tempfile.mkstemp('.zip')
 os.close(handle)
 
@@ -16,6 +20,7 @@ z.close()
 sys.path.insert(0, filename)
 
 import hello
+
 print hello.f()
 
 os.unlink(filename)

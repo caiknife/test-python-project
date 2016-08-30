@@ -1,10 +1,11 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-17
 检查信用卡校验和
 @author: CaiKnife
-'''
+"""
+
 
 def cardLuhnChecksumIsValid(card_number):
     """通过Luhn mod-10校验和算法检查信用卡号"""
