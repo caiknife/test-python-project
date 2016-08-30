@@ -1,27 +1,29 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-21
 检查一个实例的状态变化
 @author: CaiKnife
-'''
+"""
 import copy
+
 
 class ChangeCheckerMinin(object):
     containerItems = {dict: dict.iteritems, list: enumerate}
     immutable = False
+
     def snapshot(self):
         if self.immutable:
-            return 
+            return
         self._snapshot = self._copy_container(self.__dict__)
-        
+
     def makeImmutable(self):
         self.immutable = True
         try:
             del self._snapshot
         except AttributeError:
             pass
-        
+
     def _copy_container(self, container):
         """半浅拷贝，只对容器类型递归"""
         new_container = copy.copy(container)
@@ -31,7 +33,7 @@ class ChangeCheckerMinin(object):
             elif hasattr(v, 'snapshot'):
                 v.snapshot()
         return new_container
-    
+
     def isChanged(self):
         if self.immutable:
             return False
@@ -42,7 +44,7 @@ class ChangeCheckerMinin(object):
             return self._checkContainer(self.__dict__, snap)
         finally:
             self._snapshot = snap
-            
+
     def _checkContainer(self, container, snapshot):
         if len(container) != len(snapshot):
             return True
@@ -54,7 +56,7 @@ class ChangeCheckerMinin(object):
             if self._checkItem(v, ov):
                 return True
         return False
-    
+
     def _checkItem(self, newitem, olditem):
         if type(newitem) != type(olditem):
             return True
@@ -66,18 +68,20 @@ class ChangeCheckerMinin(object):
                 return False
             return method_isChanged()
         return newitem != olditem
-    
+
+
 if __name__ == '__main__':
     class eg(ChangeCheckerMinin):
         def __init__(self, *a, **k):
             self.L = list(*a, **k)
-        
+
         def __str__(self):
             return "eg(%s)" % str(self.L)
-        
+
         def __getattr__(self, a):
             return getattr(self.L, a)
-        
+
+
     x = eg('ciao')
     print 'x=', x, 'is changed =', x.isChanged()
     x.snapshot()
