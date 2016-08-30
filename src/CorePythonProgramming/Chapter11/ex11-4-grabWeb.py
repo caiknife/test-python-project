@@ -1,12 +1,13 @@
-#!/usr/bin/python
-#coding:UTF-8
-'''
+#!/usr/bin/env python
+# coding:UTF-8
+"""
 Created on 2011-12-6
 
 @author: ycai
-'''
+"""
 
 from urllib import urlretrieve
+
 
 def firstNonBlank(lines):
     for eachLine in lines:
@@ -14,7 +15,8 @@ def firstNonBlank(lines):
             continue
         else:
             return eachLine
-    
+
+
 def firstLast(webpage):
     f = open(webpage)
     lines = f.readlines()
@@ -22,16 +24,17 @@ def firstLast(webpage):
     print firstNonBlank(lines)
     lines.reverse()
     print firstNonBlank(lines)
-    
+
+
 def download(url='http://www.google.com', process=firstLast):
     try:
         retval = urlretrieve(url)[0]
-    except IOError, e: 
+    except IOError, e:
         retval = None
-    
+
     if retval:
         process(retval)
-        
+
+
 if __name__ == '__main__':
     download()
-    

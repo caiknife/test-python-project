@@ -1,10 +1,10 @@
-#!/usr/bin/python
-#coding:UTF-8
-'''
+#!/usr/bin/env python
+# coding:UTF-8
+"""
 Created on 2011-12-7
 
 @author: ycai
-'''
+"""
 from functools import partial
 import Tkinter
 

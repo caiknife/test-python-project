@@ -1,22 +1,26 @@
-#!/usr/bin/python
-#coding: UTF-8
-'''
+#!/usr/bin/env python
+# coding: UTF-8
+"""
 Created on 2011-12-6
 
 @author: ycai
-'''
+"""
 
 from time import ctime, sleep
+
 
 def tsfunc(func):
     def wrappedFunc():
         print '[%s] %s() called' % (ctime(), func.__name__)
         return func()
+
     return wrappedFunc
+
 
 @tsfunc
 def foo():
     pass
+
 
 foo()
 sleep(4)

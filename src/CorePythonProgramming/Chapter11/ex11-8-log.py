@@ -1,12 +1,13 @@
-#!/usr/bin/python
-#coding:UTF-8
-'''
+#!/usr/bin/env python
+# coding:UTF-8
+"""
 Created on 2011-12-7
 
 @author: ycai
-'''
+"""
 
 from time import time
+
 
 def logged(when):
     def log(f, *args, **kargs):
@@ -19,8 +20,9 @@ kargs: %r ''' % (f, args, kargs)
         def wrapper(*args, **kargs):
             log(f, *args, **kargs)
             return f(*args, **kargs)
+
         return wrapper
-    
+
     def post_logged(f):
         def wrapper(*args, **kargs):
             now = time()
@@ -29,15 +31,18 @@ kargs: %r ''' % (f, args, kargs)
             finally:
                 log(f, *args, **kargs)
                 print "time delta: %s" % (time() - now)
+
         return wrapper
-    
+
     try:
         return {"pre": pre_logged, "post": post_logged}[when]
     except KeyError, e:
         raise ValueError(e), 'must be "pre" or "post"'
-    
+
+
 @logged("post")
 def hello(name):
     print 'Hello, ', name
-    
+
+
 hello('World!')

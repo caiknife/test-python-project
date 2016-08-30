@@ -1,16 +1,17 @@
-#!/usr/bin/python
-#coding:UTF-8
-'''
+#!/usr/bin/env python
+# coding:UTF-8
+"""
 Created on 2011-12-8
 
 @author: ycai
-'''
+"""
 
 from operator import add, sub
 from random import randint, choice
 
 ops = {'+': add, '-': sub}
 MAXTRIES = 2
+
 
 def doprob():
     op = choice('+-')
@@ -31,7 +32,8 @@ def doprob():
                 oops += 1
         except (KeyboardInterrupt, EOFError, ValueError):
             print 'invalid input... try again'
-            
+
+
 def main():
     while True:
         doprob()
@@ -41,6 +43,7 @@ def main():
                 break
         except (KeyboardInterrupt, EOFError):
             break
-        
+
+
 if __name__ == '__main__':
     main()

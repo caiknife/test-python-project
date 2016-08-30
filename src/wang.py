@@ -29,7 +29,7 @@ def process_file(path):
         # pop first line
         first_line = fc.pop(0)
 
-        ENCODING = '#coding:utf8\n'
+        ENCODING = '# coding:utf8\n'
 
         if first_line == ENCODING:
             return
