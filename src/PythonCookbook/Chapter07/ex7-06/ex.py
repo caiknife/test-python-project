@@ -1,15 +1,17 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-22
 Pickling代码对象
 @author: CaiKnife
-'''
+"""
 
 import new, types, copy_reg
 
+
 def code_ctor(*args):
     return new.code(*args)
+
 
 def reduce_code(co):
     if co.co_freevars or co.co_cellvars:
@@ -19,15 +21,19 @@ def reduce_code(co):
                        co.co_varnames, co.co_filename, co.co_name, co.co_firstlineno,
                        co.co_lnotab)
 
+
 copy_reg.pickle(types.CodeType, reduce_code)
 
 if __name__ == '__main__':
     import cPickle
+
+
     def f(x):
         print 'Hello, %s!' % x
-    
+
+
     pickled_code = cPickle.dumps(f.func_code)
     recovered_code = cPickle.loads(pickled_code)
-    
+
     g = new.function(recovered_code, globals())
     g('world')

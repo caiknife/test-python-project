@@ -1,15 +1,15 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-11-22
 使用pickle和cPickle模块序列化数据
 @author: CaiKnife
-'''
+"""
 
 data = {
     12: 'twelve',
     'feep': list('ciao'),
-    1.23: 4+5j,
+    1.23: 4 + 5j,
     (1, 2, 3): u'wer'
 }
 
