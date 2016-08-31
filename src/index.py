@@ -7,7 +7,8 @@
 from itertools import groupby
 from operator import methodcaller
 from collections import defaultdict
-import time, os
+import time
+import os
 
 
 def main():
