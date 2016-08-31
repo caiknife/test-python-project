@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -59,12 +59,13 @@ The file, poker.txt, contains one-thousand random hands dealt to two players. Ea
 How many hands does Player 1 win?
 """
 
-value = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14}
+value = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12,
+         'K': 13, 'A': 14}
 all_kinds = tuple(reversed(sorted(value.values())))
 all_suits = list('DCSH')
 
 
-def get(hash, arr): 
+def get(hash, arr):
     return ((i, hash.get(i, {})) for i in arr)
 
 
@@ -90,12 +91,12 @@ class ShowHand(object):
         # royal flush
         for suit, kinds in get(self._hand, all_suits):
             if has(kinds, tuple('TJQKA')):
-                return (9, )
+                return (9,)
 
         # straight flush
         for suit, kinds in get(self._hand, all_suits):
             kinds = sorted(kind for kind in kinds.keys())
-            if len(kinds) == 5 and kinds[4]-kinds[0] == 4:
+            if len(kinds) == 5 and kinds[4] - kinds[0] == 4:
                 return (8, kinds[0])
 
         # four of a kind
@@ -117,7 +118,7 @@ class ShowHand(object):
 
         # straight
         kinds = sorted(kind for kind in all_kinds if self._hand.has_key(kind))
-        if len(kinds) == 5 and kinds[4]-kinds[0] == 4:
+        if len(kinds) == 5 and kinds[4] - kinds[0] == 4:
             return (4, kinds[0])
 
         # three of a kind

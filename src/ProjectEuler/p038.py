@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -21,6 +21,8 @@ from euler import is_pandigital
 
 
 def concatenate_product(n, i):
-    return int("".join([str(n*x) for x in range(1, i+1)]))
+    return int("".join([str(n * x) for x in range(1, i + 1)]))
 
-print max([concatenate_product(n, i) for n in range(1, 10000) for i in range(1, 10) if is_pandigital(concatenate_product(n, i))])
+
+print max([concatenate_product(n, i) for n in range(1, 10000) for i in range(1, 10) if
+           is_pandigital(concatenate_product(n, i))])

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -11,5 +11,5 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
 bound = range(999, 100, -1)
-results = [x*y for x in bound for y in bound if str(x*y) == str(x*y)[::-1]]
+results = [x * y for x in bound for y in bound if str(x * y) == str(x * y)[::-1]]
 print max(results)

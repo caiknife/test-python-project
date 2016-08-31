@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -24,7 +24,7 @@ def sum_diagonals_of_spiral(size):
     step = 2
     total = 0
     since_last = 0
-    while n <= size**2:
+    while n <= size ** 2:
         total += n
         n += step
         since_last += 1
@@ -32,5 +32,6 @@ def sum_diagonals_of_spiral(size):
             step += 2
             since_last = 0
     return total
+
 
 print sum_diagonals_of_spiral(1001)

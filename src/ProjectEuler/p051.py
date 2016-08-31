@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -38,30 +38,31 @@ Find the smallest prime which, by replacing part of the number (not necessarily 
 # if __name__ == '__main__':
 #     main()
 
-#!/usr/bin/env python
+# !/usr/bin/env python
 from itertools import *
 
 
-def primes(n): 
+def primes(n):
     if n == 2:
         return [2]
     elif n < 2:
         return []
-    s = range(3, n+1, 2)
+    s = range(3, n + 1, 2)
     mroot = n ** 0.5
-    half = (n+1)/2-1
+    half = (n + 1) / 2 - 1
     i = 0
     m = 3
     while m <= mroot:
         if s[i]:
-            j=(m*m-3)/2
-            s[j]=0
-            while j<half:
-                s[j]=0
-                j+=m
+            j = (m * m - 3) / 2
+            s[j] = 0
+            while j < half:
+                s[j] = 0
+                j += m
         i += 1
-        m = 2*i + 3
-    return [2]+[x for x in s if x]
+        m = 2 * i + 3
+    return [2] + [x for x in s if x]
+
 
 from bisect import bisect_left
 # sqrt(1000000000) = 31622
@@ -79,7 +80,7 @@ def is_prime(n):
         if p > limit: return True
         if n % p == 0: return False
     # fall back on trial division if n > 1 billion
-    for f in range(31627, limit, 6): # 31627 is the next prime
+    for f in range(31627, limit, 6):  # 31627 is the next prime
         if n % f == 0 or n % (f + 4) == 0:
             return False
     return True
@@ -101,10 +102,12 @@ def number_families(num):
 def main():
     for prime in primes(1000000):
         for number_family in number_families(prime):
-            prime_family = [n for n in number_family if is_prime(n) and len(str(n)) == len(str(prime))]
+            prime_family = [n for n in number_family if
+                            is_prime(n) and len(str(n)) == len(str(prime))]
             if len(prime_family) == 8 and prime in prime_family:
                 print prime
                 return
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -22,6 +22,7 @@ def is_circular(n):
         if not is_prime(r):
             return False
     return True
+
 
 circulars = [2]
 for x in range(3, 1000000, 2):

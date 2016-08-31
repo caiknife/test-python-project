@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -26,11 +26,12 @@ def make_irrational_fraction(length):
 
 
 def return_int(n, length):
-    if length==0:
+    if length == 0:
         return 0
-    return int(str(n)*length)
+    return int(str(n) * length)
+
 
 s = make_irrational_fraction(1000000)
-d = [int(s[9*return_int(1, i)]) for i in range(7)]
-print reduce(lambda x, y: x*y, d)
+d = [int(s[9 * return_int(1, i)]) for i in range(7)]
+print reduce(lambda x, y: x * y, d)
 # print int(s[0]) * int(s[9]) * int(s[99]) * int(s[999]) * int(s[9999]) * int(s[99999]) * int(s[999999])

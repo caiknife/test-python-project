@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -26,7 +26,7 @@ from operator import itemgetter
 
 def cycle_length(n):
     for t in range(1, n):
-        if 10**t % n == 1:
+        if 10 ** t % n == 1:
             return t
     return 0
 

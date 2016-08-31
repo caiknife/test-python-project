@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -26,7 +26,7 @@ from euler import factorial
 count = 0
 for n in xrange(23, 101):
     for r in range(1, n):
-        if factorial(n) / factorial(r) / factorial(n-r) > 1000000:
+        if factorial(n) / factorial(r) / factorial(n - r) > 1000000:
             count += 1
 
 print count

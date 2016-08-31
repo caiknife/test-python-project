@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -10,7 +10,7 @@ Problem 16
 What is the sum of the digits of the number 21000?
 """
 
-NUMBER = 2**1000
+NUMBER = 2 ** 1000
 
 print NUMBER
 print sum([int(x) for x in str(NUMBER)])

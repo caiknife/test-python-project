@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -61,5 +61,6 @@ def spell(n, words=words):
                     word.append(num[2])
                 break
     return word
+
 
 print sum([len(word) for n in range(1, 1001) for word in spell(n)])

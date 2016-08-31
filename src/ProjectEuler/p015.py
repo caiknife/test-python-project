@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -14,8 +14,9 @@ How many routes are there through a 2020 grid?
 
 def fact(n):
     f = 1
-    for x in range(1, n+1):
+    for x in range(1, n + 1):
         f *= x
     return f
+
 
 print fact(40) / fact(20) / fact(20)

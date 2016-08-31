@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -17,4 +17,4 @@ Find the difference between the sum of the squares of the first one hundred natu
 """
 
 bound = range(1, 101)
-print abs(sum(bound)**2 - sum([x**2 for x in bound]))
+print abs(sum(bound) ** 2 - sum([x ** 2 for x in bound]))

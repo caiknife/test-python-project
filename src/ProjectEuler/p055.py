@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -28,7 +28,7 @@ NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretica
 def is_lychrel_number(n):
     n = str(n)
     for i in xrange(50):
-        n = str(int(n)+int(n[::-1]))
+        n = str(int(n) + int(n[::-1]))
         if n == n[::-1]:
             return False
     return True
@@ -36,6 +36,7 @@ def is_lychrel_number(n):
 
 def main():
     print sum([1 for n in xrange(10000) if is_lychrel_number(n)])
+
 
 if __name__ == '__main__':
     main()

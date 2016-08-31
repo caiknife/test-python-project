@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -39,6 +39,7 @@ first = [int(x.strip()) for x in first.split(',')]
 second = [int(x.strip()) for x in second.split(',')]
 
 from PIL import Image, ImageDraw
+
 img = Image.new("RGB", (500, 500))
 draw = ImageDraw.Draw(img)
 draw.polygon(first, fill="white")

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -35,6 +35,7 @@ def fib_generator():
     while True:
         yield fib(i)
         i += 1
+
 
 f = fib_generator()
 i = 1

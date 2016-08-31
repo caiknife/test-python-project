@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -22,5 +22,5 @@ def is_palindrome(n):
     r = int(str(n)[::-1])
     return r == n
 
-print sum([i for i in range(1000001) if is_palindrome(i) and is_palindrome(to_binary(i))])
 
+print sum([i for i in range(1000001) if is_palindrome(i) and is_palindrome(to_binary(i))])

@@ -1,12 +1,14 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
 http://www.pythonchallenge.com/pc/def/channel.html
 """
 
-import zipfile, re, os
+import zipfile
+import re
+import os
 
 number = 90052
 pattern = re.compile(r"Next nothing is (\d+)")

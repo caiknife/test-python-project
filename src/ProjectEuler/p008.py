@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -36,6 +36,7 @@ def calc_multi(obj):
         result *= int(i)
     return result
 
+
 NUMBER = """
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
@@ -59,11 +60,11 @@ NUMBER = """
 71636269561882670428252483600823257530420752963450
 """
 NUMBER = "".join(NUMBER.strip().split())
-#print len(NUMBER)
+# print len(NUMBER)
 max_number = 0
 i = 0
-while i+5 <= len(NUMBER):
-    data = calc_multi(NUMBER[i:i+5])
+while i + 5 <= len(NUMBER):
+    data = calc_multi(NUMBER[i:i + 5])
     max_number = max(max_number, data)
     i += 1
 print max_number

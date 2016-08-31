@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -15,12 +15,13 @@ For which value of p  1000, is the number of solutions maximised?
 
 def solutions(p):
     s = []
-    for a in range(1, p/3):
-        for b in range(a, (p-a)/2):
+    for a in range(1, p / 3):
+        for b in range(a, (p - a) / 2):
             c = p - a - b
-            if a**2 + b**2 == c**2:
+            if a ** 2 + b ** 2 == c ** 2:
                 s.append((a, b, c))
     return s
+
 
 ma = ms = 0
 for p in range(12, 1001, 2):

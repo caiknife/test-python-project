@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -26,11 +26,10 @@ for n in range(1, MAX_NUMBER):
     for a in abundant_numbers:
         if a > n:
             break
-        if abundant_dict.get(n-a):
+        if abundant_dict.get(n - a):
             sum_of_abundants = True
             break
     if not sum_of_abundants:
         total += n
 
 print total
-

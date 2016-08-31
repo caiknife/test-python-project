@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -29,7 +29,7 @@ def is_conjecture(n):
         return False
     if not n % 2:
         return False
-    c = product(PRIMES, [2*i**2 for i in range(1, 100)])
+    c = product(PRIMES, [2 * i ** 2 for i in range(1, 100)])
     for p in c:
         if n == p[0] + p[1]:
             return True

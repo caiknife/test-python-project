@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -51,28 +51,33 @@ def factorize(n):
         res.append(2)
         n //= 2
     # try odd numbers up to sqrt(n)
-    limit = math.sqrt(n+1)
+    limit = math.sqrt(n + 1)
     i = 3
     while i <= limit:
         if n % i == 0:
             res.append(i)
             n //= i
-            limit = math.sqrt(n+i)
+            limit = math.sqrt(n + i)
         else:
             i += 2
     if n != 1:
         res.append(n)
     return res
 
+
 def distinct_prime_factors(n):
     return set(factorize(n))
+
 
 def main():
     chain = []
     search = 4
-    for n in range(1,1000000):
+    for n in range(1, 1000000):
         if len(distinct_prime_factors(n)) == search:
             chain.append(n)
-    print (chain[i:i+search] for i, n in enumerate(chain) if chain[i:i+search] == range(n, n+search)).next()[0]
+    print(chain[i:i + search] for i, n in enumerate(chain) if
+          chain[i:i + search] == range(n, n + search)).next()[0]
+
+
 if __name__ == "__main__":
     main()

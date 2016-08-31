@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -52,17 +52,19 @@ TRIANGLE_MATRIX = """
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 """
-TRIANGLE_MATRIX = [[int(x) for x in line.split(" ")] for line in TRIANGLE_MATRIX.strip().split("\n")]
+TRIANGLE_MATRIX = [[int(x) for x in line.split(" ")] for line in
+                   TRIANGLE_MATRIX.strip().split("\n")]
 
 
 def path(num, triangle=TRIANGLE_MATRIX):
     s = triangle[0][0]
     col = 0
     for row in xrange(1, len(triangle)):
-        if num % 2: 
+        if num % 2:
             col += 1
         num /= 2
         s += triangle[row][col]
     return s
+
 
 print max([path(n) for n in range(16384)])

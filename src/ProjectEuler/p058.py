@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -36,7 +36,7 @@ def sprial_numbers():
 def main():
     level, primes = 0, 0
     for i, n in enumerate(sprial_numbers()):
-        if (i-1) % 4 == 0:
+        if (i - 1) % 4 == 0:
             level += 1
 
         if is_prime(n):
@@ -44,10 +44,11 @@ def main():
 
         side_length = (2 * level) + 1
 
-        ratio =  float(primes) / float(i+1)
+        ratio = float(primes) / float(i + 1)
         if 0 < ratio < 0.1:
             print side_length
             return
+
 
 if __name__ == '__main__':
     main()

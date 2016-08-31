@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -18,6 +18,6 @@ for byte in range(len(data) - 1):
     n = 0 if n == 4 else n + 1
 
 for n, elt in enumerate(new_data):
-    h = open(str(n + 1)+".jpg", "wb")
+    h = open(str(n + 1) + ".jpg", "wb")
     h.write("".join(elt))
     h.close()

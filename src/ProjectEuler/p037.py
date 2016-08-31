@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -29,6 +29,7 @@ def truncatable_form_right(n):
 
 def is_curious(n):
     return truncatable_from_left(n) and truncatable_form_right(n)
+
 
 data = []
 n = 11

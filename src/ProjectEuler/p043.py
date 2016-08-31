@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -24,12 +24,12 @@ from euler import get_int
 
 
 def has_property(p):
-    primes = [2,3,5,7,11,13,17]
-    for i in range(1, len(p)-2):
-        n = get_int(p[i:i+3])
-        if n % primes[i-1]:
+    primes = [2, 3, 5, 7, 11, 13, 17]
+    for i in range(1, len(p) - 2):
+        n = get_int(p[i:i + 3])
+        if n % primes[i - 1]:
             return False
     return True
 
-print sum([get_int(p) for p in permutations(range(10)) if has_property(p)])
 
+print sum([get_int(p) for p in permutations(range(10)) if has_property(p)])

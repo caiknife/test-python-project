@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -21,7 +21,7 @@ from string import ascii_lowercase
 
 def decrypt(code, password):
     l = len(password)
-    return tuple(c ^ ord(password[i%l]) for i, c in enumerate(code))
+    return tuple(c ^ ord(password[i % l]) for i, c in enumerate(code))
 
 
 def to_text(code):
@@ -30,14 +30,15 @@ def to_text(code):
 
 def main():
     code = tuple(int(x) for x in file("cipher1.txt").read().strip().split(","))
-    
-    for p in  permutations(ascii_lowercase, 3):
+
+    for p in permutations(ascii_lowercase, 3):
         c = decrypt(code, p)
         t = to_text(c)
         if t.find(' the ') > 0:
             print t
             print sum(ord(c) for c in t)
             return
+
 
 if __name__ == '__main__':
     main()

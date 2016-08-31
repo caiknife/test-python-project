@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -19,7 +19,7 @@ pan_digits = []
 
 for a in range(1, 5000):
     for b in range(1, 100):
-        c = a*b
+        c = a * b
         if is_pandigital(a, b, c, length=9) and c not in pan_digits:
             pan_digits.append(c)
 

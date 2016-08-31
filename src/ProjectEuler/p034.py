@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -19,5 +19,6 @@ fact = (1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880)
 
 def is_curious(n):
     return sum([factorial(x) for x in get_digits(n)]) == n
+
 
 print sum([x for x in range(3, 100000) if is_curious(x)])

@@ -21,43 +21,49 @@ db.stocks.insert({"day": "2010/10/03", "time": "2010/10/03 05:00:23 GMT-400", "p
 db.stocks.insert({"day": "2010/10/06", "time": "2010/10/06 05:27:58 GMT-400", "price": 4.30});
 db.stocks.insert({"day": "2010/10/04", "time": "2010/10/04 08:34:50 GMT-400", "price": 4.01});
 
-db.runCommand({"group": {
-    "ns": "stocks",
-    "key": "day",
-    "initial": {"time": 0},
-    "$reduce": function(doc, prev) {
-        if (doc.time > prev.time) {
-            prev.price = doc.price;
-            prev.time = doc.time;
+db.runCommand({
+    "group": {
+        "ns": "stocks",
+        "key": "day",
+        "initial": {"time": 0},
+        "$reduce": function (doc, prev) {
+            if (doc.time > prev.time) {
+                prev.price = doc.price;
+                prev.time = doc.time;
+            }
         }
     }
-}}); // 这里的用法是错误的
+}); // 这里的用法是错误的
 
-db.runCommand({"group": {
-    "ns": "stocks",
-    "key": {"day": true},
-    "initial": {"time": "0"},
-    "$reduce": function(doc, prev) {
-        if (doc.time > prev.time) {
-            prev.price = doc.price;
-            prev.time = doc.time;
+db.runCommand({
+    "group": {
+        "ns": "stocks",
+        "key": {"day": true},
+        "initial": {"time": "0"},
+        "$reduce": function (doc, prev) {
+            if (doc.time > prev.time) {
+                prev.price = doc.price;
+                prev.time = doc.time;
+            }
         }
     }
-}}); // 用runCommand来处理
+}); // 用runCommand来处理
 
-db.runCommand({"group": {
-    "ns": "stocks",
-    "key": {"day": true},
-    "initial": {"price": 0},
-    "$reduce": function(doc, prev) {
-        prev.price += doc.price;
+db.runCommand({
+    "group": {
+        "ns": "stocks",
+        "key": {"day": true},
+        "initial": {"price": 0},
+        "$reduce": function (doc, prev) {
+            prev.price += doc.price;
+        }
     }
-}});
+});
 
 db.stocks.group({
     "key": {"day": true},
     "initial": {"time": "0"},
-    "reduce": function(doc, prev) {
+    "reduce": function (doc, prev) {
         if (doc.time > prev.time) {
             prev.price = doc.price;
             prev.time = doc.time;
@@ -69,7 +75,7 @@ db.stocks.group({
 db.stocks.group({
     "key": {"day": true},
     "initial": {"price": 0},
-    "reduce": function(doc, prev) {
+    "reduce": function (doc, prev) {
         prev.price += doc.price;
     }
 });
@@ -79,7 +85,7 @@ db.stocks.group({
 db.posts.group({
     "key": {"day": true},
     "initial": {"tags": {}},
-    "$reduce": function(doc, prev) {
+    "$reduce": function (doc, prev) {
         for (i in doc.tags) {
             if (doc.tags[i] in prev.tags) {
                 prev.tags[doc.tags[i]]++;
@@ -93,7 +99,7 @@ db.posts.group({
 db.posts.group({
     "key": {"day": true},
     "initial": {"tags": {}},
-    "$reduce": function(doc, prev) {
+    "$reduce": function (doc, prev) {
         for (i in doc.tags) {
             if (doc.tags[i] in prev.tags) {
                 prev.tags[doc.tags[i]]++;
@@ -102,7 +108,7 @@ db.posts.group({
             }
         }
     },
-    "finalize": function(prev) {
+    "finalize": function (prev) {
         var mostPopular = 0;
         for (i in prev.tags) {
             if (prev.tags[i] > mostPopular) {
@@ -116,19 +122,19 @@ db.posts.group({
 
 // 将函数作为键使用
 db.posts.group({
-    "$keyf": function(x) {
+    "$keyf": function (x) {
         return x.category.toLowerCase();
     } // 根据posts的category小写名称来group
 });
 
 // map reduce
-map = function() {
+map = function () {
     for (var key in this) {
         emit(key, {"count": 1});
     }
 };
 
-reduce = function(key, emits) {
+reduce = function (key, emits) {
     total = 0;
     for (var i in emits) {
         total += emits.count;

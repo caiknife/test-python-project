@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -7,6 +7,7 @@ http://www.pythonchallenge.com/pc/def/oxygen.html
 """
 
 from PIL import Image
+
 img = Image.open("oxygen.png")
 print "Image info: ", img.format, img.size, img.mode
 

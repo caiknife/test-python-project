@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -29,6 +29,7 @@ def main():
         if len(str(num)) > len(str(den)):
             count += 1
     print count
+
 
 if __name__ == '__main__':
     main()

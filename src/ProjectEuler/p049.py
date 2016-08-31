@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -19,11 +19,12 @@ from euler import make_primes, is_prime, get_digits
 def to_tuple(n):
     return tuple(str(n))
 
-primes = [p for p in make_primes(10000) if len(str(p))==4]
-primes = [p for p in primes if is_prime(p+3330) and len(str(p+3330))==4 and is_prime(p+6660) and len(str(p+6660))==4] 
+
+primes = [p for p in make_primes(10000) if len(str(p)) == 4]
+primes = [p for p in primes if
+          is_prime(p + 3330) and len(str(p + 3330)) == 4 and is_prime(p + 6660) and len(
+              str(p + 6660)) == 4]
 for p in primes:
     per = permutations(to_tuple(p))
-    if to_tuple(p+3330) in  per and to_tuple(p+6660) in per:
-        print p, p+3330, p+6660
-
-
+    if to_tuple(p + 3330) in per and to_tuple(p + 6660) in per:
+        print p, p + 3330, p + 6660

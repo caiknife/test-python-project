@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -19,6 +19,7 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
 
 
 def power_of_digits(n, p):
-    return sum([int(x)**p for x in str(n)])
+    return sum([int(x) ** p for x in str(n)])
 
-print sum([n for n in range(2, 300000) if power_of_digits(n, 5)==n])
+
+print sum([n for n in range(2, 300000) if power_of_digits(n, 5) == n])

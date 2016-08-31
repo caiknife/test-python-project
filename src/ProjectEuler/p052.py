@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -18,7 +18,7 @@ def get_sorted_digits(n):
 def has_same_digits(n, itertimes=6):
     digits = get_sorted_digits(n)
     for i in xrange(2, itertimes):
-        if digits != get_sorted_digits(n*i):
+        if digits != get_sorted_digits(n * i):
             return False
     return True
 

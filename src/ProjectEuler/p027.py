@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -35,10 +35,11 @@ def num_primes(func):
         n += 1
     return n
 
+
 max_pair = (0, 0, 0)
 
 for a, b in product(range(-999, 1000), range(-999, 1000)):
-    func = lambda n: n**2 + a*n +b
+    func = lambda n: n ** 2 + a * n + b
     num = num_primes(func)
     if num > max_pair[2]:
         max_pair = (a, b, num)

@@ -29,9 +29,9 @@ db.runCommand({"dropIndexes": "foo", "index": "*"}); // 删除foo集合下的所
 // 地理空间索引
 db.map.ensureIndex({"gps": "2d"}); //创建地理空间索引
 // gps的格式
-{"gps": [0, 100]};
-{"gps": {"x": -30, "y":30}};
-{"gps": {"latitude": -180, "longtitude": 180}} // 默认情况下，地理空间索引的范围是-180到180，对经纬度来说很方便
+var a = {"gps": [0, 100]};
+var b = {"gps": {"x": -30, "y": 30}};
+var c = {"gps": {"latitude": -180, "longtitude": 180}} // 默认情况下，地理空间索引的范围是-180到180，对经纬度来说很方便
 // 创建一个2000光年见方的空间索引
 db.star.trek.ensureIndex({"light-years": "2d"}, {"min": -1000, "max": 1000});
 

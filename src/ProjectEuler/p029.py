@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -22,7 +22,7 @@ from itertools import product
 
 data = []
 for a, b in product(range(2, 101), range(2, 101)):
-    r = a**b
+    r = a ** b
     if r not in data:
         data.append(r)
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -14,13 +14,14 @@ What is the total of all the name scores in the file?
 
 
 def name_worth(name):
-    return sum([ord(x)-ord('A')+1 for x in name])
+    return sum([ord(x) - ord('A') + 1 for x in name])
 
 
 def name_score(worth, order):
     return worth * order
 
+
 names = file("names.txt").read().replace('"', "").split(",")
 names.sort()
 
-print sum([name_score(name_worth(names[i]), i+1) for i in range(len(names))])
+print sum([name_score(name_worth(names[i]), i + 1) for i in range(len(names))])

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -29,5 +29,6 @@ def list_prime(num=None):
             i += 1
         if i >= num:
             return i, n
+
 
 print list_prime(10001)

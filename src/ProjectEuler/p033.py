@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -35,6 +35,7 @@ def is_curious(n, d):
 
     return False
 
+
 m = product(range(10, 100), range(10, 100))
 
-print reduce(lambda x, y: x*y, (Fraction(*f) for f in m if is_curious(*f))).denominator
+print reduce(lambda x, y: x * y, (Fraction(*f) for f in m if is_curious(*f))).denominator

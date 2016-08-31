@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -64,14 +64,14 @@ def product(obj):
 
 
 def seqs(matrix=MATRIX, x=0, y=0):
-    if y+4 <= len(matrix):
-        yield list(matrix[i][x] for i in range(y, y+4))
-    if x+4 <= len(matrix[y]):
-        yield list(matrix[y][i] for i in range(x, x+4))
-    if y+4 <= len(matrix) and x+4 <= len(matrix[y]):
-        yield list(matrix[y+i][x+i] for i in range(4))
-    if y+4 <= len(matrix) and x>=3:
-        yield list(matrix[y+i][x-i] for i in range(4))
+    if y + 4 <= len(matrix):
+        yield list(matrix[i][x] for i in range(y, y + 4))
+    if x + 4 <= len(matrix[y]):
+        yield list(matrix[y][i] for i in range(x, x + 4))
+    if y + 4 <= len(matrix) and x + 4 <= len(matrix[y]):
+        yield list(matrix[y + i][x + i] for i in range(4))
+    if y + 4 <= len(matrix) and x >= 3:
+        yield list(matrix[y + i][x - i] for i in range(4))
 
 
 def list_seqs(matrix=MATRIX):
@@ -79,6 +79,7 @@ def list_seqs(matrix=MATRIX):
         for x in range(len(matrix[y])):
             for seq in seqs(matrix, x, y):
                 yield seq
+
 
 MATRIX = [[int(x) for x in line.split(" ")] for line in MATRIX.strip().split("\n")]
 print max(product(seq) for seq in list_seqs(matrix=MATRIX))

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -7,6 +7,7 @@ common functions for project euler
 """
 import math
 from functools import wraps
+
 
 def factor(num):
     """
@@ -23,11 +24,13 @@ def cache(func):
     用来装饰递归调用的函数
     """
     caches = {}
+
     @wraps(func)
     def wrap(*args):
         if args not in caches:
             caches[args] = func(*args)
         return caches[args]
+
     return wrap
 
 
@@ -40,7 +43,7 @@ def fib(num):
         return 1
     elif num == 2:
         return 2
-    return fib(num-1) + fib(num-2)
+    return fib(num - 1) + fib(num - 2)
 
 
 @cache
@@ -51,7 +54,7 @@ def gcd(a, b):
     if a == 0:
         return b
     else:
-        return gcd(b%a, a)
+        return gcd(b % a, a)
 
 
 def is_prime(num):
@@ -64,25 +67,25 @@ def is_prime(num):
         return True
     else:
         return False
-    # if num <= 1:
-    #     return False
-    # if num == 2:
-    #     return True
-    # else:
-    #     root = math.sqrt(num)
-    #     i = 3
-    #     while i <= root:
-    #         if num % i == 0:
-    #             return False
-    #         i += 2
-    #     return True
+        # if num <= 1:
+        #     return False
+        # if num == 2:
+        #     return True
+        # else:
+        #     root = math.sqrt(num)
+        #     i = 3
+        #     while i <= root:
+        #         if num % i == 0:
+        #             return False
+        #         i += 2
+        #     return True
 
 
 def triangle_number(n):
     """
     For Problem 12
     """
-    return n*(n+1)/2
+    return n * (n + 1) / 2
 
 
 def count_divisors(number):
@@ -94,12 +97,12 @@ def collatz_seq(n):
     For Problem 14
     """
     r = []
-    while n>1:
+    while n > 1:
         r.append(n)
         if n % 2 == 0:
-            n = n/2
+            n = n / 2
         else:
-            n = 3*n + 1
+            n = 3 * n + 1
     r.append(n)
     return r
 
@@ -121,7 +124,7 @@ def divisors(n):
     r, i, root = [], 1, math.sqrt(n)
     while i < root:
         if n % i == 0:
-            r.extend([i, n/i])
+            r.extend([i, n / i])
         i += 1
     # perfect square
     if n % root == 0:
@@ -157,20 +160,20 @@ def is_pandigital(*args, **kwargs):
     """
     num = sorted("".join(str(arg) for arg in args))
     try:
-        if kwargs['length'] and len(num)!=kwargs['length']:
+        if kwargs['length'] and len(num) != kwargs['length']:
             return False
     except KeyError:
         pass
 
     for i in range(len(num)):
-        if str(i+1) != str(num[i]):
+        if str(i + 1) != str(num[i]):
             return False
 
     return True
 
 
 def worth(word):
-    return sum([int(ord(w)-ord('A')+1) for w in word.upper()])
+    return sum([int(ord(w) - ord('A') + 1) for w in word.upper()])
 
 
 def is_triangle_word(word):
@@ -187,15 +190,15 @@ def is_triangle_word(word):
 def pentagon_number(n):
     """
     For Problem 44
-    """ 
-    return n*(3*n-1)/2
+    """
+    return n * (3 * n - 1) / 2
 
 
 def hexagon_number(n):
     """
     For Problem 45
     """
-    return n*(2*n-1)
+    return n * (2 * n - 1)
 
 
 def make_primes(limit=100):
@@ -228,7 +231,7 @@ def prime_factors(n):
 
 def prime_generator():
     yield 2
-    n = 3 
+    n = 3
     while True:
         if is_prime(n):
             yield n

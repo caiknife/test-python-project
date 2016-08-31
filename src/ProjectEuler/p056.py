@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -15,7 +15,7 @@ from euler import get_digits
 m = 0
 for a in xrange(1, 100):
     for b in xrange(1, 100):
-        digit_sum = sum(get_digits(a**b))
+        digit_sum = sum(get_digits(a ** b))
         if m < digit_sum:
             m = digit_sum
 

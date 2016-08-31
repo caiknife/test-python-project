@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -22,10 +22,11 @@ def way_to_change(target, coins=coins):
         return 1
     else:
         largest = coins[-1]
-        uses, total = target/largest, 0
+        uses, total = target / largest, 0
 
-        for i in range(uses+1):
-            total += way_to_change(target-largest*i, coins[:-1])
+        for i in range(uses + 1):
+            total += way_to_change(target - largest * i, coins[:-1])
         return total
+
 
 print way_to_change(200, coins)

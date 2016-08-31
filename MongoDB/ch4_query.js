@@ -19,7 +19,7 @@ db.users.find({"registered": {"$lt": start}});
 db.users.find({"username": {"$ne": "joe"}});
 // IN查询
 db.raffle.find({"ticket_no": {"$in": [725, 542, 390]}});
-db.users.find({"user_id": {"$in"：[12345, "joe"]}});
+db.users.find({"user_id": {"$in": [12345, "joe"]}});
 // NOT IN查询
 db.raffle.find({"ticket_no": {"$nin": [725, 542, 390]}});
 // OR查询
@@ -71,16 +71,18 @@ db.blog.find({"comments": {"$elemMatch": {"author": "joe", "score": {"$gte": 5}}
 // $where查询
 db.foo.insert({"apple": 1, "banana": 6, "peach": 3});
 db.foo.insert({"apple": 8, "spinach": 4, "watermelon": 4});
-db.foo.find({"$where": function() {
-    for (var current in this) {
-        for (var other in this) {
-            if (current!=other && this[current]==this[other]) {
-                return true;
+db.foo.find({
+    "$where": function () {
+        for (var current in this) {
+            for (var other in this) {
+                if (current != other && this[current] == this[other]) {
+                    return true;
+                }
             }
         }
+        return false;
     }
-    return false;
-}});
+});
 
 // limit
 db.c.find.limit(3); //返回前3条数据

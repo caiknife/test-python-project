@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -14,7 +14,7 @@ from itertools import combinations
 
 
 def remarkable_prime(a, b):
-    return is_prime(int(str(a)+str(b))) and is_prime(int(str(b)+str(a)))
+    return is_prime(int(str(a) + str(b))) and is_prime(int(str(b) + str(a)))
 
 
 def a_set_of_five_primes(sets):
@@ -32,6 +32,7 @@ def main():
         if a_set_of_five_primes(p):
             print sum(p)
             return
+
 
 if __name__ == '__main__':
     main()

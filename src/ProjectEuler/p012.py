@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 """
 @author: CaiKnife
 
@@ -30,5 +30,5 @@ while True:
     number = triangle_number(n)
     n += 1
     if count_divisors(number) >= 500:
-        break 
+        break
 print number
