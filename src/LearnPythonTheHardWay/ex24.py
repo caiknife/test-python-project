@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 
 print "Let's practice everything."
 print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
@@ -17,9 +17,9 @@ print "--------------"
 print poem
 print "--------------"
 
-
 five = 10 - 2 + 3 - 6
 print "This should be five: %s" % five
+
 
 def secret_formula(started):
     jelly_beans = started * 500

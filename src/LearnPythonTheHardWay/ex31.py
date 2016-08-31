@@ -1,5 +1,5 @@
 ﻿#!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 
 print "You enter a dark room with two doors.  Do you go through door #1 or door #2?"
 
@@ -26,7 +26,7 @@ elif door == "2":
     print "3. Understanding revolvers yelling melodies."
 
     insanity = raw_input("> ")
-    
+
     if insanity == "1" or insanity == "2":
         print "Your body survives powered by a mind of jello.  Good job!"
     else:

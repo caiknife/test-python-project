@@ -1,10 +1,10 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-12-14
 
 @author: caiknife
-'''
+"""
 
 formatter = "%r %r %r %r"
 

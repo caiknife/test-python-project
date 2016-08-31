@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 
 age = raw_input("How old are you? ")
 height = raw_input("How tall are you? ")

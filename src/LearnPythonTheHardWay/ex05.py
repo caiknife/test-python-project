@@ -1,15 +1,15 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-12-14
 
 @author: caiknife
-'''
+"""
 
 my_name = 'Zed A. Shaw'
-my_age = 35 # not a lie
-my_height = 74 # inches
-my_weight = 180 # lbs
+my_age = 35  # not a lie
+my_height = 74  # inches
+my_weight = 180  # lbs
 my_eyes = 'Blue'
 my_teeth = 'White'
 my_hair = 'Brown'

@@ -1,10 +1,9 @@
 #!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 
 people = 30
 cars = 40
 buses = 15
-
 
 if cars > people:
     print "We should take the cars."

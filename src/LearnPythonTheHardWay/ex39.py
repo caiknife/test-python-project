@@ -1,14 +1,15 @@
 #!/usr/bin/python
-#coding: UTF-8
-'''
+# coding: UTF-8
+"""
 Created on 2012-12-14
 
 @author: CaiKnife
-'''
+"""
+
 
 class Song(object):
     count = 0
-    
+
     def __init__(self, lyrics):
         self.lyrics = lyrics
         self.__class__.count += 1
@@ -16,6 +17,7 @@ class Song(object):
     def sing_me_a_song(self):
         for line in self.lyrics:
             print line
+
 
 happy_bday = Song(["Happy birthday to you",
                    "I don't want to get sued",

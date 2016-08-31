@@ -1,23 +1,25 @@
 ﻿#!/usr/bin/python
-#coding: UTF-8
+# coding: UTF-8
 
 from sys import exit
 
+
 def gold_room():
     print "This room is full of gold. How much do you take?"
-    
+
     next = raw_input(">")
     if "0" in next or "1" in next:
         how_much = int(next)
     else:
         dead("Man, learn to type a number.")
-    
+
     if how_much < 50:
         print "Nice, you're not greedy. You win!"
         exit(0)
     else:
         dead("You greedy bastard!")
-        
+
+
 def bear_room():
     print "There is a bear here."
     print "The bear has a bunch of honey."
@@ -54,11 +56,13 @@ def cthulhu_room():
         dead("Well that was tasty!")
     else:
         cthulhu_room()
-        
+
+
 def dead(why):
     print why, 'Good job!'
     exit(1)
-    
+
+
 def start():
     print "You are in a dark room."
     print "There is a door to your right and left."
@@ -72,5 +76,6 @@ def start():
         cthulhu_room()
     else:
         dead("You stumble around the room until you starve.")
+
 
 start()
