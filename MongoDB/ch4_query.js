@@ -11,7 +11,7 @@ db.users.find({}, {"fatal_weakness": 0});
 db.users.find({}, {"username": 1, "_id": 0});
 
 // 条件查询
-db.users.find({"age": {"$gte": 18, "$lte", 30}});
+db.users.find({"age": {"$gte": 18, "$lte": 30}});
 // 日期条件查询
 var start = new Date("01/01/2007");
 db.users.find({"registered": {"$lt": start}});
