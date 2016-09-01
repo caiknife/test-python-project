@@ -4,7 +4,10 @@
 @author: CaiKnife
 """
 
-import os, sys, urllib2, re
+import os
+import sys
+import urllib2
+import re
 
 
 class PageException(Exception):
