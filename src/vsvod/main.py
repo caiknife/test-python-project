@@ -5,7 +5,9 @@ Created on 2013-1-15
 @author: CaiKnife
 """
 
-import os, sys, re, urllib2
+import os
+import re
+import urllib2
 from pyquery import PyQuery as PQ
 
 TARGET_SITE = "http://www.vsvod.com/"
