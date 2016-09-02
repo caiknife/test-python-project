@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding:utf8
-__author__ = 'caiknife'
 
 import requests
 
