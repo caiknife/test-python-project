@@ -21,5 +21,12 @@ d = pq(html_doc)
 
 for a in d('.sister'):
     element = pq(a)
-    print element.attr('href')
-    print element.attr('class')
+    print element.attr.href, element.attr('href')
+    print element.attr('class'), element.attr.class_
+
+# d('title').insertAfter("<script></script>")
+
+d("<script></script>").insertAfter(d("title"))
+d("<link></link>").insertAfter(d("title"))
+
+print d.html()
