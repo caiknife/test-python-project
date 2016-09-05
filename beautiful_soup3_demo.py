@@ -22,6 +22,7 @@ and they lived at the bottom of a well.</p>
 
 soup = BeautifulSoup(html_doc)
 
-print soup.title
-print soup.title.text
+print soup.title.string, type(soup.title.string)
+print soup.title.text, type(soup.title.text)
+print soup.title.string == soup.title.text
 print soup.p

@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # coding:utf8
 
-from bs4 import BeautifulSoup
-from bs4 import __version__
-
-print "The beautiful soup version is %s." % __version__
+from pyquery import PyQuery as pq
 
 html_doc = """
 <html><head><title>The Dormouse's story</title></head>
@@ -20,8 +17,9 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 
-soup = BeautifulSoup(html_doc, "lxml")
+d = pq(html_doc)
 
-print soup.title
-print soup.title.text
-print soup.p
+for a in d('.sister'):
+    element = pq(a)
+    print element.attr('href')
+    print element.attr('class')
