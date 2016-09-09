@@ -40,9 +40,12 @@ def get_url():
 
 
 def load_page():
-    user_agent = r"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
-    # 构造header 伪装一下
-    header = {"User-Agent": user_agent}
+    header = {
+        r'User-Agent': r'Mozilla/5.0 (X11; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+        r'Accept': r'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        r'Accept-Language': r'en-US,en;q=0.5',
+        r'Accept-Encoding': r'gzip, deflate'
+    }
 
     resp = requests.get(entity['url'], headers=header)
     if resp.status_code != 200:
