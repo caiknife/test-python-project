@@ -36,3 +36,4 @@ nosetests.xml
 
 .idea
 src/vsvod/pages
+zhihu_pic_downloader/images
