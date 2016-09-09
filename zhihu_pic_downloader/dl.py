@@ -40,7 +40,7 @@ def get_url():
 
 
 def load_page():
-    user_agent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
+    user_agent = r"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
     # 构造header 伪装一下
     header = {"User-Agent": user_agent}
 
