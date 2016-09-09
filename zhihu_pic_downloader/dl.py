@@ -49,7 +49,8 @@ def load_page():
         raise Exception("Http error!")
 
     d = pq(resp.content)
-    imgs = d("noscript img")
+    # imgs = d("noscript img")
+    imgs = d("img.origin_image.zh-lightbox-thumb.lazy")
     for ele in imgs:
         images.append(pq(ele).attr("data-original"))
 
