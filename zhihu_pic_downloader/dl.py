@@ -56,7 +56,8 @@ def load_page():
 
 
 def save_imgs():
-    dest_dir = "./images/" + entity['question']
+    dest_dir = os.path.dirname(os.path.abspath(__file__)) + "/images/" + entity['question']
+    print dest_dir
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
 
