@@ -42,9 +42,11 @@ def get_url():
 def load_page():
     header = {
         r'User-Agent': r'Mozilla/5.0 (X11; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+        r'Host': r'www.zhihu.com',
         r'Accept': r'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        r'Accept-Language': r'en-US,en;q=0.5',
-        r'Accept-Encoding': r'gzip, deflate'
+        r'Accept-Language': r'zh-CN,zh;q=0.8,zh-TW;q=0.6',
+        r'Accept-Encoding': r'gzip, deflate',
+        r'Connection': r'keep-alive'
     }
 
     resp = requests.get(entity['url'], headers=header)
