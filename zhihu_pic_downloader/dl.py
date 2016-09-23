@@ -41,12 +41,12 @@ def get_url():
 
 def load_page():
     header = {
-        r'User-Agent': r'Mozilla/5.0 (X11; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
-        r'Host': r'www.zhihu.com',
-        r'Accept': r'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        r'Accept-Language': r'zh-CN,zh;q=0.8,zh-TW;q=0.6',
-        r'Accept-Encoding': r'gzip, deflate',
-        r'Connection': r'keep-alive'
+        ur'User-Agent': ur'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36',
+        ur'Host': ur'www.zhihu.com',
+        ur'Accept': ur'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        ur'Accept-Language': ur'zh-CN,zh;q=0.8,en;q=0.6',
+        ur'Accept-Encoding': ur'gzip, deflate, sdch',
+        ur'Connection': ur'keep-alive'
     }
 
     resp = requests.get(entity['url'], headers=header)
