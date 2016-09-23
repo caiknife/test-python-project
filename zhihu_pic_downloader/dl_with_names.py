@@ -46,7 +46,8 @@ def load_page():
         ur'Accept': ur'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         ur'Accept-Language': ur'zh-CN,zh;q=0.8,en;q=0.6',
         ur'Accept-Encoding': ur'gzip, deflate, sdch',
-        ur'Connection': ur'keep-alive'
+        ur'Connection': ur'keep-alive',
+        ur'Cache-Control': ur'max-age=0'
     }
 
     resp = requests.get(entity['url'], headers=header)
