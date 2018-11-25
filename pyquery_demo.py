@@ -3,6 +3,10 @@
 
 from pyquery import PyQuery as pq
 
+import test
+
+test.foo()
+
 html_doc = """
 <html><head><title>The Dormouse's story</title></head>
 <body>
